@@ -18,9 +18,11 @@ public class Main {
         myCashe.add(2,user2);
         myCashe.add(3,user3);
         myCashe.add(4,user4);
-        System.out.println(user.toString());
+        myCashe.add(4,user4);
 
-        System.out.println(myCashe.get(3));
+
+
+        System.out.println(user.toString());
 
         System.out.println(myCashe.toString());
 

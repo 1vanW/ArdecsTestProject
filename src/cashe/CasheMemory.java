@@ -4,17 +4,18 @@ import users.User;
 
 import java.io.*;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class CasheMemory<Integer ,V extends Serializable> {
 
     private int maximumSize;
-    private Map<Integer,User> myCashe ;
+    private Map<Integer,User> myCashe = new HashMap<>() ;
 
     public CasheMemory(int size) {
         this.maximumSize = size;
-        this.myCashe = new HashMap<>();
+
     }
     // получение юзера по ключу
     public User get(Integer key){
@@ -25,6 +26,34 @@ public class CasheMemory<Integer ,V extends Serializable> {
         }
         return null;
     }
+
+
+
+
+//    public Integer getMFU(){
+//
+//        List<User> users = new ArrayList<>();
+//
+//
+//
+//        for (Map.Entry<Integer,User> user : myCashe.entrySet()){
+//            users.add(user.getValue());
+//        }
+//        System.out.println(users);
+//
+//        Map<User,Integer> tempMap = (Map<User, Integer>) users.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+//
+//        System.out.println(tempMap);
+//
+//
+//
+//
+//
+
+//
+//       return null;
+//    }
+
 
     public Integer getLRU(){ // юзер который дольше всех не был
             Integer key = myCashe.keySet().iterator().next();
@@ -38,6 +67,8 @@ public class CasheMemory<Integer ,V extends Serializable> {
 
         return key;
     }
+
+
     //добавление в кэш
     public void add(Integer key, User user){
         /*если размер первысили то удаляем по стратегии LRU (алгоритм для хранения ограниченного
