@@ -2,7 +2,7 @@
 Classname: Main
 Developer: Иван Хохряков
  */
-import cashe.CacheMemory;
+import cache.CacheMemory;
 
 import users.User;
 

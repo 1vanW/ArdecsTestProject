@@ -2,7 +2,7 @@
 Classname: CacheMemory
 Developer: Иван Хохряков
  */
-package cashe;
+package cache;
 
 import users.User;
 
@@ -111,9 +111,9 @@ import java.util.*;
 
     @Override
     public String toString() {
-        return "CasheMemory{" +
+        return "CacheMemory{" +
                 "maximumSize=" + maximumSize +
-                ", myCashe=" + myCache +
+                ", myCache=" + myCache +
                 '}';
     }
 
